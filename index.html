@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Sono:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Sono:wght@400..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Here's What I've Learned</title>
 </head>
 
 <body>
+    <div class="container">
     <header class="header">
         <div class="logo">
-            <img src="logo.png" height="68" width="68" alt="Bubble message logo of the app named what I've learned" />
+            <img src="logo.png" alt="Bubble message logo of the app named what I've learned" />
             <h1>What I've learned recently</h1>
             </div>
-        <button>Share a fact</button>
+        <button class="btn btn-large">Share a fact</button>
     </header>
 
     <form class="fact-form">
@@ -30,14 +31,16 @@
             <option value="geography">Geography</option>
             <option value="culture">Culture</option>
         </select>
-        <button>Submit</button>
+        <button class="btn btn-large">Submit</button>
     </form>
-    <main>
+    <main class="main">
         <aside>
             <ul>
-                <li><button>All</button></li>
-                <li><button>Technology</button></li>
-                <li><button>Science</button></li>
+                <li class="category"><button class="btn btn-all-categories">All</button></li>
+                <li class="category"><button class="btn btn-category" style="background-color: #3b82f6;">Business</button></li>
+                <li class="category"><button class="btn btn-category" style="background-color: #eab308;">Geography</button></li>
+                <li class="category"><button class="btn btn-category" style="background-color: #16a34a;">Environmental</button></li>
+                <li class="category"><button class="btn btn-category" style="background-color: #f97316;">Culture</button></li>
             </ul>
         </aside>
 
@@ -49,32 +52,35 @@
                         own a
                         variety
                         of brands like 4Square, New World and Fresh Choice to name a few.
-                        <a href="https://www.wisemove.co.nz/post/a-quick-guide-to-food-shopping-and-groceries-in-new-zealand#:~:text=New%20Zealand%20has%20two%20major,division%20of%20Woolworths%20New%20Zealand."
+                        <a class="source"
+                            href="https://www.wisemove.co.nz/post/a-quick-guide-to-food-shopping-and-groceries-in-new-zealand#:~:text=New%20Zealand%20has%20two%20major,division%20of%20Woolworths%20New%20Zealand."
                             target="_blank">
                             (Source)</a>
                     </p>
-                    <span class="tag" style="background-color: #3b82f6;">#business#</span>
+                    <span class="tag" style="background-color: #3b82f6;">business</span>
                     <div class="vote-buttons">
-                        <button>👍 <strong>24</strong></button>
-                        <button>🤯 <strong>9</strong></button>
-                        <button>⛔ <strong>4</strong></button>
+                        <button>👍 24</button>
+                        <button>🤯 9</button>
+                        <button>⛔ 4</button>
                     </div>
                 </li>
                 <li class="fact">
                     <p>Zagreb is the capital of Croatia.
-                        <a href="https://www.britannica.com/place/Zagreb" target="_blank">(Source)</a>
+                        <a class="source" href="https://www.britannica.com/place/Zagreb" target="_blank">(Source)</a>
                     </p>
-                    <span class="tag" style="background-color:#eab308;">#geography#</span>
+                    <span class="tag" style="background-color:#eab308;">geography</span>
                     <div class="vote-buttons">
-                        <button>👍 <strong>11</strong></button>
-                        <button>🤯 <strong>2</strong></button>
-                        <button>⛔ <strong>0</strong></button>
+                        <button>👍 11</button>
+                        <button>🤯 2</button>
+                        <button>⛔ 0</button>
                     </div>
                 </li>
             </ul>
-            <p class="footnote">Built by Tehaunui</p>
         </section>
     </main>
+</div>
+<footer>
+    <p>Built by Tehaunui</p>
+</footer>
 </body>
-
 </html>

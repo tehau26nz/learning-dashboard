@@ -81,6 +81,14 @@ ul{
     border-radius: 16px;
 }
 
+@media (max-width: 1200px){
+    .fact{
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+    }
+}
+
 .logo img{
     width: 60px;
     height: 60px;
@@ -143,6 +151,7 @@ ul{
     margin: 0 auto;
 }
 
+/*************** FORM RESPONSIVENESS ***************/
 .fact-form{
     background-color: #44403c;
     margin-bottom: 40px;
@@ -177,6 +186,22 @@ ul{
     font-weight: 600;
     font-size: 18px;
     margin-right: 18px;
+    align-self: center;
+}
+
+@media (max-width: 1090px){
+    body{
+        padding: 32px 48px;
+    }
+    .fact-form{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fact-form input,
+    .fact-form select {
+        width: auto;
+    }
 }
 
 .header{
@@ -197,4 +222,10 @@ ul{
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: 48px;
+}
+
+@media (max-width: 900px){
+    .main{
+        grid-template-columns: 1fr;
+    }
 }

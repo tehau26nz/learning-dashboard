@@ -1,6 +1,6 @@
 /*************** Remove preset styling in the browser ***************/
 /* Global selector */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,19 +9,19 @@
 
 /*************** ELEMENT STYLING ***************/
 
-body{
+body {
     background-color: #292524;
     color: #fafaf9;
     font-family: Sono, sans-serif;
     padding: 48px 64px;
 }
 
-footer{
+footer {
     text-align: center;
 }
 
 
-h1{
+h1 {
     font-size: 42px;
     text-transform: uppercase;
     text-align: center;
@@ -30,11 +30,11 @@ h1{
     margin-top: 6px;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.btn{
+.btn {
     border: none;
     font-family: Coiny, sans-serif;
     line-height: 1;
@@ -42,33 +42,33 @@ ul{
     font-size: 17px;
     padding: 10px 0 13px;
     background-image: linear-gradient(135deg, #3b82f6,
-    #ef4444, #16a34a,#eab308);
+            #ef4444, #16a34a, #eab308);
     color: inherit;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.btn:hover{
+.btn:hover {
     transform: scale(110%) rotate(-1.6deg);
 }
 
-.btn-large{
+.btn-large {
     font-size: 30px;
     padding: 20px 32px 17px;
 }
 
-.btn-all-categories{
+.btn-all-categories {
     margin-bottom: 16px;
     width: 100%;
 }
 
-.btn-category{
+.btn-category {
     width: 100%;
     background-image: none;
 }
 
-.fact{
+.fact {
     font-size: 20px;
     line-height: 1.4;
     background-color: #44403c;
@@ -81,32 +81,34 @@ ul{
     border-radius: 16px;
 }
 
-@media (max-width: 1200px){
-    .fact{
+@media (max-width: 1200px) {
+    .fact {
         flex-direction: column;
         align-items: flex-end;
         gap: 12px;
     }
 }
 
-.logo img{
+.logo img {
     width: 60px;
     height: 60px;
 }
 
-.source:link, .source:visited{
-    color:#a8a29e;
+.source:link,
+.source:visited {
+    color: #a8a29e;
     text-decoration: none;
     margin-left: 12px;
     transition: 0.3s;
 }
 
-.source:hover, .source:active{
+.source:hover,
+.source:active {
     color: #3b82f6;
     text-decoration: outline;
 }
 
-.tag{
+.tag {
     text-transform: uppercase;
     font-size: 14px;
     font-family: Coiny, sans-serif;
@@ -115,16 +117,16 @@ ul{
     cursor: pointer;
 }
 
-.vote-buttons{
+.vote-buttons {
     margin-left: auto;
     flex-shrink: 0;
     display: flex;
     gap: 8px;
 }
 
-.vote-buttons button{
+.vote-buttons button {
     border: none;
-    background-color:#78716c ;
+    background-color: #78716c;
     font-size: 18px;
     padding: 6px 12px;
     border-radius: 100px;
@@ -135,24 +137,24 @@ ul{
     transition: 0.3s;
 }
 
-.vote-buttons button:hover{
+.vote-buttons button:hover {
     background-color: #292524;
 }
 
 
 /*************** MAIN LAYOUT ***************/
 
-.category{
+.category {
     margin-bottom: 16px;
 }
 
-.container{
+.container {
     max-width: 1500px;
     margin: 0 auto;
 }
 
 /*************** FORM RESPONSIVENESS ***************/
-.fact-form{
+.fact-form {
     background-color: #44403c;
     margin-bottom: 40px;
     padding: 16px 32px;
@@ -174,26 +176,27 @@ ul{
     color: inherit;
 }
 
-.fact-form input::placeholder{
+.fact-form input::placeholder {
     color: #a8a2a8;
 }
 
-.fact-form input:first-child{
+.fact-form input:first-child {
     flex-grow: 1;
 }
 
-.fact-form span{
+.fact-form span {
     font-weight: 600;
     font-size: 18px;
     margin-right: 18px;
     align-self: center;
 }
 
-@media (max-width: 1090px){
-    body{
+@media (max-width: 1090px) {
+    body {
         padding: 32px 48px;
     }
-    .fact-form{
+
+    .fact-form {
         flex-direction: column;
         align-items: stretch;
     }
@@ -204,7 +207,7 @@ ul{
     }
 }
 
-.header{
+.header {
     margin-bottom: 40px;
     display: flex;
     align-items: center;
@@ -212,20 +215,26 @@ ul{
     padding: 10px;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.main{
+.main {
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: 48px;
 }
 
-@media (max-width: 900px){
-    .main{
+@media (max-width: 900px) {
+    .main {
         grid-template-columns: 1fr;
     }
+}
+
+/*************** FORM LAYOUT ***************/
+
+.js-hide {
+    display: none;
 }

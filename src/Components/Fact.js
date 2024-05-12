@@ -1,22 +1,35 @@
-const CATEGORIES = [
-    { name: "technology", color: "#3b82f6" },
-    { name: "science", color: "#16a34a" },
-    { name: "finance", color: "#ef4444" },
-    { name: "society", color: "#eab308" },
-    { name: "entertainment", color: "#db2777" },
-    { name: "health", color: "#14b8a6" },
-    { name: "history", color: "#f97316" },
-    { name: "news", color: "#8b5cf6" },
-];
+import { useState } from 'react';
+import { CATEGORIES } from "./Category";
+import supabase from "../supabase";
 
-function Fact({ factObj }) {
+function Fact({ fact, setFacts }) {
+
+    const [isUpdating, setIsUpdating] = useState(false);
+
+    async function handleVote(columnName) {
+        setIsUpdating(true);
+        const { data: updatedFact, error } = await
+            supabase
+                .from('facts')
+                .update({
+                    [columnName]: fact[columnName] + 1
+                })
+                .eq("id", fact.id)
+                .select();
+        setIsUpdating(false);
+
+        // console.log(updatedFact);
+        if (!error) setFacts((facts) => facts.map((f) => f.id === fact.id ?
+            updatedFact[0] : f))
+    }
+
     return (
         <li className="fact">
             <p>
-                {factObj.text}
+                {fact.text}
                 <a
                     className="source"
-                    href={factObj.source}
+                    href={fact.source}
                     rel="noreferrer"
                     target="_blank"
                 >(Source)</a
@@ -24,14 +37,14 @@ function Fact({ factObj }) {
             </p>
             <span className="tag" style={{
                 backgroundColor:
-                    CATEGORIES.find((category) => category.name === factObj.category).color
+                    CATEGORIES.find((category) => category.name === fact.category)?.color
             }}
-            >{factObj.category}</span
-            >
+            >{fact.category}
+            </span>
             <div className="vote-buttons">
-                <button>👍 {factObj.votesInteresting}</button>
-                <button>🤯 {factObj.votesMindblowing}</button>
-                <button>⛔ {factObj.votesFalse}</button>
+                <button onClick={() => handleVote("votes_interesting")} disabled={isUpdating}>👍 {fact.votes_interesting}</button>
+                <button onClick={() => handleVote("votes_mind_blowing")} disabled={isUpdating}>🤯 {fact.votes_mind_blowing}</button>
+                <button onClick={() => handleVote("votes_false")} disabled={isUpdating}>⛔ {fact.votes_false}</button>
             </div>
         </li>
     );

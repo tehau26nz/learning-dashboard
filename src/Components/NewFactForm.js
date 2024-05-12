@@ -35,7 +35,7 @@ function isValidHttpUrl(string) {
 
 function NewFactForm({ setFacts, setShowForm }) {
     const [text, setText] = useState("");
-    const [source, setSource] = useState("http://example.com");
+    const [source, setSource] = useState("");
     const [category, setCategory] = useState("");
     const [isUploading, setIsUploading] = useState(false);
     const textLength = text.length;
@@ -43,7 +43,7 @@ function NewFactForm({ setFacts, setShowForm }) {
     async function handleSubmit(e) {
         // 1. Prevent browser reload
         e.preventDefault();
-        console.log(text, source, category);
+        // console.log(text, source, category);
 
         // 2. Check if data is valid. if yes, create a new fact
         if (text && isValidHttpUrl(source) && category && textLength <= 200) {
